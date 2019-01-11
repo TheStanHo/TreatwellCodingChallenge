@@ -59,7 +59,7 @@ public class BoxDrawing {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
 
-				System.out.print(arr[i][j] + "  ");// space of 3 horizontally between symbols
+				System.out.print(arr[i][j] + "  ");// space of 2 horizontally between symbols
 			}
 			System.out.println(); //space of 2 vertically between symbols
 			System.out.println();
@@ -67,14 +67,9 @@ public class BoxDrawing {
 	}
 
 	public static void main(String[] args) {
-		print2DArray(drawBox(4, 4));
+		print2DArray(drawBox(3, 2));
 		
-	 String box4x4 = "┍  ─  ─  ┑  \n" +
-                "\n│        │  \n" +
-                "\n│        │  \n" +
-                "\n┕  ─  ─  ┚  \n" +
-                " \n";
-	 System.out.println(box4x4);
+	
 
 	}
 }
