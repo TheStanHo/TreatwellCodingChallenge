@@ -12,7 +12,7 @@ public class BoxDrawing {
 	/*
 	 * A method to print out a box using box drawing characters from Ascii 
 	 */
-	public static void drawBox(int height, int width) {
+	public static char[][] drawBox(int height, int width) {
 		char[][] grid = new char[height][width];
 		char topLeft = '\u250D'; // ┍
 		char topRight = '\u2511'; // ┑
@@ -20,6 +20,9 @@ public class BoxDrawing {
 		char bottomRight = '\u251A';// ┚
 		char horizontalEdge = '\u2500'; // -
 		char verticalEdge = '\u2502'; // |
+		
+
+		
 
 		if (height < 2 || width < 2) {
 			throw new IllegalArgumentException("Please input a value of height or width that is bigger than 1");
@@ -43,22 +46,35 @@ public class BoxDrawing {
 				grid[height - 1][i] = horizontalEdge;
 			}
 
-			// printing 'grid' (2d array)
-			for (int i = 0; i < grid.length; i++) {
-				for (int j = 0; j < grid[i].length; j++) {
-
-					System.out.print(grid[i][j] + "   ");// space of 3 horizontally between symbols
-				}
-				System.out.println(); //space of 2 vertically between symbols
-				System.out.println();
-			}
+		
 		}
+		
+		return grid;
 
+	}
+	
+	public static void print2DArray(char[][] arr)  {
+		// printing 'grid' (2d array)
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+
+				System.out.print(arr[i][j] + "  ");// space of 3 horizontally between symbols
+			}
+			System.out.println(); //space of 2 vertically between symbols
+			System.out.println();
+		}
 	}
 
 	public static void main(String[] args) {
-		drawBox(5,4);
+		print2DArray(drawBox(4, 4));
 		
+	 String box4x4 = "┍  ─  ─  ┑  \n" +
+                "\n│        │  \n" +
+                "\n│        │  \n" +
+                "\n┕  ─  ─  ┚  \n" +
+                " \n";
+	 System.out.println(box4x4);
 
 	}
 }
